@@ -13,7 +13,18 @@ CREATE TABLE item_prices_d (
     id INT,
     name TEXT,
     buy_price INT,
-    sell_price INT
+    sell_price INT,
+    craft_1_id INT,
+    craft_1_count INT,
+    craft_2_id INT,
+    craft_2_count INT,
+    craft_3_id INT,
+    craft_3_count INT,
+    craft_4_id INT,
+    craft_4_count INT,
+    craft_5_id INT,
+    craft_5_count INT
+
 
 )"""
 )

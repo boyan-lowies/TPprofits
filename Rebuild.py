@@ -18,9 +18,8 @@ CREATE TABLE item_prices AS SELECT * FROM item_prices_d WHERE 0
 """)
 
 
-#Insert IDS into db
+#Insert tradable IDS into db
 request = r.get("https://api.guildwars2.com/v2/commerce/prices").json()
-
 for entry in request:
     conn.execute("""--sql
     INSERT INTO item_prices (ID) 
@@ -32,6 +31,7 @@ for entry in request:
 TP.update_prices(conn)
 
 
+#Get recipe data
 
 
 #Execute and close db
