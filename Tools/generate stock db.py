@@ -14,6 +14,7 @@ CREATE TABLE item_prices_d (
     name TEXT,
     buy_price INT,
     sell_price INT,
+    craft_count INT,
     craft_1_id INT,
     craft_1_count INT,
     craft_2_id INT,
