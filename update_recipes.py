@@ -1,10 +1,8 @@
 import requests as rq
 
-
 def update_recipes(conn):
     request = rq.get("https://api.datawars2.ie/gw2/v2/recipes").json()
     for entry in request:
-        
         #convert request to processable list
         ingrediants = []
         for i,items in enumerate(entry['ingredients']):
@@ -12,7 +10,7 @@ def update_recipes(conn):
         for j in range(i,5):
             ingrediants.append([0,0])
 
-
+        #execute request
         conn.execute("""--sql
         UPDATE 
             item_prices
@@ -44,4 +42,6 @@ def update_recipes(conn):
             ingrediants[4][1],
             entry['output_item_id']
         ))
-
+    
+    # Get tiers 
+    

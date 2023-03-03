@@ -5,9 +5,8 @@ def update_prices(conn):
     for entry in request:
         conn.execute("""--sql
         UPDATE item_prices
-        SET name = '%s', buy_price = %i, sell_price = %i
+        SET buy_price = %i, sell_price = %i
         WHERE id = %i
-    """ % ( entry['name'].replace("\"","").replace("\'",""), 
-            entry.get('buy_price',0), 
+    """ % ( entry.get('buy_price',0), 
             entry.get('sell_price',0),
             entry['id'],))
